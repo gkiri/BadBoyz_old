@@ -284,7 +284,7 @@ export default function Home() {
     <div className="h-screen flex flex-col items-center justify-center">
       <div className="flex flex-col items-center py-4 mb-10">{/* Add margin-bottom (mb-10) here */}
         <h2
-          style={{ fontFamily: 'Graduate ', fontSize: '2.5rem'}}
+          style={{ fontFamily: 'Graduate ', fontSize: '5rem'}}
           className="text-2xl font-bold mb-2 pulse-neon"
         >
           BADBOYZ MINT
@@ -292,7 +292,7 @@ export default function Home() {
 
         <p
           className="text-center max-w-xl font-Graduate pulse-neon"
-          style={{ fontFamily: 'Graduate ',fontSize: '1.1rem' }} 
+          style={{ fontFamily: 'Graduate ',fontSize: '2.2rem' }} 
         >
           Heroes x Villains
         </p>
@@ -317,7 +317,7 @@ export default function Home() {
               ) : (
 
               <div className="flex gap-4">
-                <div className="flex h-10 w-40 px-1 border border-gray-800 rounded-lg">
+                <div className="flex h-12 w-48 px-2 border border-gray-800 rounded-lg">
                   <button
                     onClick={() => {
                       const value = quantity - 1;
@@ -329,12 +329,12 @@ export default function Home() {
                         setQuantity(value);
                       }
                     }}
-                    className="flex items-center justify-center h-full px-1 text-xl text-center text-white rounded-l-md mint-button"
+                    className="flex items-center justify-center h-full px-2 text-2xl text-center text-white rounded-l-md mint-button"
                     disabled={isSoldOut}
                   >
                     -
                   </button>
-                  <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>
+                  <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek',fontSize: '2rem' }}>
                     {!isLoading && isSoldOut ? 'Sold Out' : quantity}
                   </p>
                   <button
@@ -348,25 +348,26 @@ export default function Home() {
                         setQuantity(value);
                       }
                     }}
-                    className="flex items-center justify-center h-full px-1 text-xl text-center text-white rounded-r-md mint-button"
+                    className="flex items-center justify-center h-full px-2 text-2xl text-center text-white rounded-r-md mint-button"
                     disabled={isSoldOut}
                   >
                     +
                   </button>
 
                   {priceToMint!=null && !priceToMint.includes("undefined")? (
-                    <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>{priceToMint}</p>
+                    <p className="flex items-center justify-center w-36 h-18 font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' ,fontSize: '1.2rem'}}>{priceToMint}</p>
                   ) : (
-                    <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>
+                    <p className="flex items-center justify-center w-36 h-18 font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek',fontSize: '1.2rem' }}>
                       {'Loading...'}
                     </p>
                   )}
 
                 </div>
                 {address ? (
-                  <div className="flex rounded-lg mint-button" style={{ fontFamily: 'Dangrek' }}>
+                  <div className="flex rounded-lg mint-button" text-2xl style={{ fontFamily: 'Dangrek' ,fontSize: '1.2rem'}}>
                     <Web3Button
                       className="flex rounded-lg mint-button "
+                      style={{ fontSize: '1.875rem' }} 
                       contractAddress={contractQuery.contract?.getAddress() || ''}
                       action={(cntr) => cntr.erc721.claim(quantity)}
                       isDisabled={!canClaim || buttonLoading}
@@ -412,7 +413,7 @@ export default function Home() {
                           <span className="sr-only">Loading...</span>
                         </div>
                       ) : (
-                        buttonText
+                        <span style={{ fontSize: '1.875rem' }}>{buttonText}</span>
                       )}
                     </Web3Button>
                     </div>

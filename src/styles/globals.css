@@ -83,6 +83,13 @@
   .mint-text {
     color: rgb(82, 12, 81);
   }
+
+  .content {
+    transform: scale(1.5); /* Zoom in by 30% */
+    max-width: 150%; /* Increase the width by 30% */
+    max-height: 150%; /* Increase the height by 30% */
+    overflow: auto; /* Add scrolling if necessary */
+  }
 }
 
 @font-face {
