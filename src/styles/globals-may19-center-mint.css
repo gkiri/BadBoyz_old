@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    height: -webkit-fill-available;
+  }
+
+  body {
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  
+
+  /* If using React, set height on the root div as well */
+  #root {
+    height: -webkit-fill-available;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .contract-metadata {
+    background-color: rgba(38, 199, 210, 0.39); /* Change color and opacity here */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .mint-box {
+    background-color: rgba(2, 11, 12, 0.99); /* Increase opacity */
+    border: 1px solid rgba(111, 118, 9, 0.533);/* box border glow */
+    box-shadow: 0 0 10px rgba(86, 54, 182, 0.5);
+    color: rgb(161, 27, 27);
+    padding: 20px; /* Add padding */
+  }
+  
+
+  .mint-button {
+    background-color: #0f0;
+    color: rgb(130, 11, 11);
+    box-shadow: 0 0 10px rgb(131, 9, 78), 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0;
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+  }
+  .mint-button:hover {
+    background: #b10eac;
+    color: black;
+    box-shadow: 0 0 10px #bc58c9, 0 0 20px #d4aada, 0 0 30px #d2b0d8, 0 0 40px #d5aed4; /* Change neon color on hover */
+  }
+  .mint-text {
+    color: rgb(82, 12, 81);
+  }
+}
+
+
+html,
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+}
+
+
+a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+body {
+  @apply min-h-screen-safe bg-black text-white;
+}
+

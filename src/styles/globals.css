@@ -13,6 +13,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: 'BadbBoyzFont', sans-serif,'MarvelFont','IronmanFont' ,'AmericancaptainFont','NationalChampion-Bold'; /* Use a fallback font name */
   }
   
   
@@ -27,36 +28,143 @@
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom);
   }
-
-  .mint-box {
-    background-color: rgba(255, 255, 255, 0.1);
+  .contract-metadata {
+    background-color: rgba(38, 199, 210, 0.39); /* Change color and opacity here */
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
   }
+  
+  .mint-box {
+    background-color: rgba(2, 11, 12, 0.99); /* Increase opacity */
+    border: 1px solid rgba(111, 118, 9, 0.533);/* box border glow */
+    box-shadow: 0 0 10px rgba(86, 54, 182, 0.5);
+    color: rgb(161, 27, 27);
+    padding: 20px; /* Add padding */
+  }
+
+  .custom-web3-button.web3-button {
+    /* Add your custom styles here */
+    width: 20px;
+    height: 500px;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 1px;
+    cursor: pointer;
+  }
+  
+  .custom-web3-button.web3-button:hover {
+    /* Add your custom hover styles here */
+    background-color: darkblue;
+  }
+  
+  
+  
 
   .mint-button {
     background-color: #0f0;
-    color: black;
-    box-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0;
+    color: rgb(130, 11, 11);
+    box-shadow: 0 0 10px rgb(131, 9, 78), 0 0 20px #0f0, 0 0 30px #0f0, 0 0 40px #0f0;
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+    font-family: 'Graduate', sans-serif; /* Add the font-family property */
   }
   .mint-button:hover {
-    background: #e7a9a9;
+    background: #b10eac;
     color: black;
+    box-shadow: 0 0 10px #bc58c9, 0 0 20px #d4aada, 0 0 30px #d2b0d8, 0 0 40px #d5aed4; /* Change neon color on hover */
+  }
+  
+  .mint-button:active {
+    background: #0d0843;
+    color: black;
+    box-shadow: 0 0 10px #bc58c9, 0 0 20px #d4aada, 0 0 30px #d2b0d8, 0 0 40px #d5aed4; /* Change neon color on hover */
   }
   .mint-text {
-    color: white;
+    color: rgb(82, 12, 81);
   }
 }
 
+@font-face {
+  font-family: 'BadBoyzFont';
+  src: url('../styles/Parkinson_-_Amboy-Black.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IronmanFont';
+  src: url('../styles/iron-man-of-war-2-ncv-font/IronManOfWar2Ncv-E85l.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MarvelFont';
+  src: url('../styles/marvel-font/MarvelRegular-Dj83.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DeadpoolFont';
+  src: url('../styles/deadpool-movie-font/DeadpoolMovie-9AzL.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AmericancaptainFont';
+  src: url('../styles/american-captain-font/AmericanCaptain-MdEY.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NationalChampion-Bold';
+  src: url('../styles/NationalChampion-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Anton';
+  src: url('../styles/Anton/Anton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dangrek';
+  src: url('../styles/Dangrek/Dangrek-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graduate';
+  src: url('../styles/Graduate/Graduate-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 20px #2f0eb1, 0 0 40px #131a64, 0 0 60px #210c57, 0 0 80px #210c56;
+  }
+  to {
+    text-shadow: 0 0 20px #1e0792, 0 0 40px #220e69, 0 0 60px #120943, 0 0 80px #0d0d55;
+  }
+}
+.pulse-neon {
+  animation: neon-glow 0.2s ease-in-out infinite alternate;
+}
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Helvetica', sans-serif,'BadBoyzFont';
+  font-weight: bold;
 }
+
 
 a {
   color: #7dd3fc;
