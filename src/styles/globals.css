@@ -149,14 +149,14 @@
 
 @keyframes neon-glow {
   from {
-    text-shadow: 0 0 20px #2f0eb1, 0 0 40px #131a64, 0 0 60px #210c57, 0 0 80px #210c56;
+    text-shadow: 0 0 20px #961535, 0 0 40px #e42a8d, 0 0 60px #b01675, 0 0 80px #ea18a1;
   }
   to {
-    text-shadow: 0 0 20px #1e0792, 0 0 40px #220e69, 0 0 60px #120943, 0 0 80px #0d0d55;
+    text-shadow: 0 0 20px #1e0792, 0 0 40px #220e69, 0 0 60px #391cda, 0 0 80px #0d0d55;
   }
 }
 .pulse-neon {
-  animation: neon-glow 0.2s ease-in-out infinite alternate;
+  animation: neon-glow 0.125s ease-in-out infinite alternate;
 }
 
 html,
