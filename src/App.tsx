@@ -364,10 +364,9 @@ export default function Home() {
 
                 </div>
                 {address ? (
-                  <div className="flex rounded-lg mint-button" text-2xl style={{ fontFamily: 'Dangrek' ,fontSize: '1.2rem'}}>
+                  <div className="flex rounded-lg mint-button" style={{ fontFamily: 'Dangrek' ,fontSize: '1.2rem'}}>
                     <Web3Button
                       className="flex rounded-lg mint-button "
-                      style={{ fontSize: '1.875rem' }} 
                       contractAddress={contractQuery.contract?.getAddress() || ''}
                       action={(cntr) => cntr.erc721.claim(quantity)}
                       isDisabled={!canClaim || buttonLoading}
