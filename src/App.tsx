@@ -348,7 +348,7 @@ export default function Home() {
                   >
                     -
                   </button>
-                  <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32 style={{ fontFamily: 'Dangrek' }}">
+                  <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>
                     {!isLoading && isSoldOut ? 'Sold Out' : quantity}
                   </p>
                   <button
@@ -362,7 +362,7 @@ export default function Home() {
                         setQuantity(value);
                       }
                     }}
-                    className="flex items-center justify-center h-full text-xl text-center text-white rounded-r-md mint-button"
+                    className="flex items-center justify-center h-full px-1 text-xl text-center text-white rounded-r-md mint-button"
                     disabled={isSoldOut}
                   >
                     +
@@ -377,9 +377,9 @@ export default function Home() {
 
                 </div>
                 {address ? (
-                  <div className="flex rounded-lg mint-button">
+                  <div className="flex rounded-lg mint-button" style={{ fontFamily: 'Dangrek' }}>
                     <Web3Button
-                      className="flex rounded-lg mint-button"
+                      className="flex rounded-lg mint-button "
                       contractAddress={contractQuery.contract?.getAddress() || ''}
                       action={(cntr) => cntr.erc721.claim(quantity)}
                       isDisabled={!canClaim || buttonLoading}
@@ -430,7 +430,9 @@ export default function Home() {
                     </Web3Button>
                     </div>
                 ) : (
-                  <ConnectWallet />
+                  <ConnectWallet 
+                  className="items-center justify-center h-full text-xl text-center text-white rounded-r-md mint-button"
+                  />
                 )}
                 <Toast toast={toast} onClose={hideToast} />
               </div>
