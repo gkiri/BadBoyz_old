@@ -38,8 +38,6 @@ export default function Home() {
   const [showAddress, setShowAddress] = useState(false);
   const [whitelistStatus, setWhitelistStatus] = useState("");
 
-  const [isPriceAvailable, setIsPriceAvailable] = useState(false);
-
   async function checkWhitelist() {
     setShowAddress(true);
   
@@ -97,11 +95,6 @@ export default function Home() {
   }, [claimedSupply.data, unclaimedSupply.data]);
 
   const priceToMint = useMemo(() => {
-
-    if (!isPriceAvailable) {//gkiri added
-      return null; // Display nothing when price is not available
-    }
-
     const bnPrice = BigNumber.from(
       activeClaimCondition.data?.currencyMetadata.value || 0,
     );
@@ -114,14 +107,7 @@ export default function Home() {
     activeClaimCondition.data?.currencyMetadata.symbol,
     activeClaimCondition.data?.currencyMetadata.value,
     quantity,
-    isPriceAvailable,
   ]);
-
-  useEffect(() => {
-    if (activeClaimCondition.isSuccess) {
-      setIsPriceAvailable(true);
-    }
-  }, [activeClaimCondition.isSuccess]);
 
   const maxClaimable = useMemo(() => {
     let bnMaxClaimable;
@@ -368,12 +354,13 @@ export default function Home() {
                     +
                   </button>
 
-                  {isPriceAvailable ? (
+                  {priceToMint!=null && !priceToMint.includes("undefined")? (
                     <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>{priceToMint}</p>
                   ) : (
-                    <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>-</p>
+                    <p className="flex items-center justify-center w-16 h-full font-mono text-center text-white lg:w-32" style={{ fontFamily: 'Dangrek' }}>
+                      {'Loading...'}
+                    </p>
                   )}
-
 
                 </div>
                 {address ? (
